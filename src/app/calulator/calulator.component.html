@@ -1,1 +1,23 @@
-<p>calulator works!</p>
+<div class="row text-center mt-4">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+            <h3>String Calculator</h3>  
+            </div>
+            <div class="card-body">
+              <div class="row mb-3">
+                  <div class="col-6 text-end"><b>Your String :</b> </div>
+                <div class="col-4"><input [(ngModel)]="inputString" placeholder="Enter your string" class="form-control" /></div>
+              </div>
+              <div class="row" *ngIf="result !== null" >
+                <div class="col-6 text-end">Sum : </div>
+                <div class="col-6 text-start"> {{ result }}</div>
+              </div>
+              <div *ngIf="errorMessage" class="mt-3 text-danger">
+                <p>Error: {{ errorMessage }}</p>
+              </div>
+              <button (click)="onCalculate()" class="btn btn-primary mt-2">Calculate</button>
+            </div>
+          </div>
+    </div>
+</div>
