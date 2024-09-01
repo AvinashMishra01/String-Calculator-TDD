@@ -46,11 +46,14 @@ describe('add method', () => {
   it('should throw an error for negative numbers', () => {
     expect(() => component.add('//;\n-1;2;-3')).toThrow(new Error('Negative numbers not allowed: -1, -3'));
   });
-  
+
   it('should handle multiple negative numbers', () => {
     expect(() => component.add('//;\n1;-2;3;-4')).toThrow(new Error('Negative numbers not allowed: -2, -4'));
   });
 
+  it('should handle delimiters with special characters', () => {
+    expect(component.add('//***\n1***2***3')).toBe(6);
+  });
 
   
 })
