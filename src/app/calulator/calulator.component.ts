@@ -10,8 +10,22 @@ export class CalulatorComponent {
     inputString: string = '';
     result: number | null = null;
     errorMessage: string = '';
-
-
+    exampleTemplate:boolean=false
+    datas=[
+      {input:'1,2,3', output:'6'},
+      {input:'1\\n3\\n3', output:'7'},
+      {input:'1!2!4!9!2', output:'18'},
+      {input:'1+2+6', output:'9'},
+      {input:'5$5$6', output:'16'},
+      {input:'6&9&0', output:'15'},
+      {input:'6&9!5', output:'20'},
+      {input:'//;\\n1;2;3', output:'6'},
+      {input:'//$\\n1$2$3', output:'6'},
+      {input:'//!\\n1!2\\n3!3', output:'9'},
+      {input:'//!\\n1!-2\\n3!3', output:'Negative numbers not allowed: -2'},
+      {input:'//!\\n1!-2\\n3!-3', output:'Negative numbers not allowed: -2,-3'},
+      {input:'//!\\n1!-2\\n3$3', output:'Error: Invalid number/sequence: 3$3'},
+    ]
     onCalculate() {
       try {
         this.errorMessage = '';
@@ -31,7 +45,7 @@ add(numbers: string): number {
     return 0;
   }
 
-  let delimiter = /[\n,]/; 
+  let delimiter = /[\n,$!*&+]/; 
   let numberString = numbers;
 
 

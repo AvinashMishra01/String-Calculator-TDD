@@ -1,0 +1,11 @@
+.container {
+    max-height: 100svh;
+    overflow-y: auto;
+}
+
+.back_ground_color {
+    background: antiquewhite;
+}
+.gap{
+    gap:10px
+}
