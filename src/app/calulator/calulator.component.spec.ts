@@ -37,6 +37,14 @@ describe('add method', () => {
   it('should handle numbers separated by both commas and new lines', () => {
     expect(component.add('1,2\n3')).toBe(6);
   });
+
+
+  it('should handle custom delimiters', () => {
+    expect(component.add('//;\n1;2;3')).toBe(6);
+  });
+
+ 
+
 })
 
 });
