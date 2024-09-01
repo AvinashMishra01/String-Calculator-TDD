@@ -25,6 +25,11 @@ describe('add method', () => {
   it('should return 0 for an empty string', () => {
     expect(component.add('')).toBe(0);
   });
+  
+  it('should return the sum of numbers separated by commas', () => {
+    expect(component.add('1,2,3')).toBe(6);
+  });
+
 })
 
 });
