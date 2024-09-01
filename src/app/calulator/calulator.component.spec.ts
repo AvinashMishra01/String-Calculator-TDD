@@ -43,8 +43,11 @@ describe('add method', () => {
     expect(component.add('//;\n1;2;3')).toBe(6);
   });
 
- 
+  it('should throw an error for negative numbers', () => {
+    expect(() => component.add('//;\n-1;2;-3')).toThrow(new Error('Negative numbers not allowed: -1, -3'));
+  });
 
+  
 })
 
 });
